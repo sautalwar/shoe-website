@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Power Step sample shoe</title><desc id="desc">Original illustration of a burgundy training shoe with sturdy cream braces and a broad tan outsole.</desc>
+  <rect width="640" height="400" rx="24" fill="#f5eae6"/><rect x="420" y="72" width="33" height="73" rx="8" fill="#dfc8bf"/><rect x="468" y="52" width="33" height="93" rx="8" fill="#dfc8bf"/><ellipse cx="324" cy="317" rx="247" ry="17" fill="#d6bdb3"/>
+  <path d="m93 279 23-115q30-17 58 8l68 52 82-48 69 49 97 24q54 12 66 40Z" fill="#8e4652" stroke="#582e37" stroke-width="5"/>
+  <path d="m118 183 40 9-8 85m72-36 44 39 27-71 40 69 27-59 31 52m29-10 53 13" fill="none" stroke="#e8cdb6" stroke-width="13"/>
+  <path d="M84 282h475l-5 31H84Z" fill="#bd926e" stroke="#582e37" stroke-width="5"/><path d="m254 224 39 17m-19-33 41 16m-22-32 42 15" stroke="#fff0da" stroke-width="7" stroke-linecap="round"/><path d="M93 304h450" stroke="#582e37" stroke-width="4"/>
+</svg>

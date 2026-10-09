@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Dawn Strider sample shoe</title><desc id="desc">Original illustration of an orange and cream running shoe on a warm peach background.</desc>
+  <rect width="640" height="400" rx="24" fill="#fff0e5"/><circle cx="486" cy="109" r="58" fill="#ffd2a4"/><ellipse cx="329" cy="309" rx="245" ry="18" fill="#dcbcad"/>
+  <path d="M91 258 112 164Q143 139 172 165L237 216 329 163 382 201 488 234Q548 245 552 276L91 284Z" fill="#f27a38" stroke="#713e2d" stroke-width="5"/>
+  <path d="m174 174 68 58 88-60 39 39-94 54Z" fill="#fff6e7"/><path d="m358 212 109 31-59 23-66-29Z" fill="#fcb56d"/>
+  <path d="M88 277Q254 292 552 270L547 299Q280 319 88 296Z" fill="#fffaf2" stroke="#713e2d" stroke-width="5"/><path d="m250 218 43 17m-23-34 46 16m-24-32 45 15" stroke="#713e2d" stroke-width="7" stroke-linecap="round"/><path d="M113 302h52m29 5h49m31 3h47m33-1h49m30-5h47" stroke="#b36543" stroke-width="5"/>
+</svg>

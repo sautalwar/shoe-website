@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.data/
+.test-data/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.log
+session_log.md
+coverage/
+sessions/

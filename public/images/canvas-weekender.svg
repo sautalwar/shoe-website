@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Canvas Weekender sample shoe</title><desc id="desc">Original illustration of a cream canvas-style sneaker with tan trim and a rounded rubber toe.</desc>
+  <rect width="640" height="400" rx="24" fill="#f6efe2"/><circle cx="492" cy="109" r="52" fill="#e8dbc5"/><ellipse cx="324" cy="313" rx="236" ry="17" fill="#ddd1bf"/>
+  <path d="m100 275 18-92q29-29 58-8l66 48 83-41 59 47 99 22q55 13 65 39Z" fill="#e7d9b9" stroke="#725c44" stroke-width="5"/>
+  <path d="m121 184 30 14-12 67m47-58 50 51 146-14" fill="none" stroke="#b38a62" stroke-width="8"/><path d="M424 253q92-4 123 34h-129Z" fill="#fffcf0" stroke="#725c44" stroke-width="4"/>
+  <path d="M95 281h454v24H95Z" fill="#fffcf0" stroke="#725c44" stroke-width="5"/><path d="M103 294h436" stroke="#b38a62" stroke-width="3"/><path d="m251 227 39 15m-20-29 41 14m-22-28 41 14" stroke="#fffcf0" stroke-width="7" stroke-linecap="round"/>
+</svg>

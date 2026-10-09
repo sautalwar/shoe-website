@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Circuit Lime sample shoe</title><desc id="desc">Original illustration of a dark training sneaker with lime side braces and a segmented pale sole.</desc>
+  <rect width="640" height="400" rx="24" fill="#f0f4e6"/><path d="M484 72v45h-42v40" fill="none" stroke="#d2e1a7" stroke-width="20" stroke-linecap="round"/><ellipse cx="324" cy="316" rx="241" ry="17" fill="#d0d7be"/>
+  <path d="m97 275 21-108q30-23 55 7l66 51 85-48 69 50 95 24q54 9 67 38Z" fill="#364e49" stroke="#243b36" stroke-width="5"/>
+  <path d="m125 203 37 73m65-33 24 37 42-67 24 65 40-67 28 63m67-20 19 32" fill="none" stroke="#b4d956" stroke-width="11"/>
+  <path d="M91 281h465l-5 28H91Z" fill="#fffde8" stroke="#243b36" stroke-width="5"/><path d="m253 225 41 17m-21-34 43 16m-23-32 43 15" stroke="#fffde8" stroke-width="7" stroke-linecap="round"/><path d="m285 288-3 21m58-21-3 21m58-21-3 21m58-21-3 21" stroke="#b4d956" stroke-width="5"/>
+</svg>

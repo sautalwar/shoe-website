@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: shoeshop
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: TRUST_PROXY
+        value: "1"
+      - key: DB_PATH
+        value: .data/shoeshop.sqlite

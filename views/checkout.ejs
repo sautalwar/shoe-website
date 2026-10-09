@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/cart">Your bag</a><span aria-hidden="true">/</span><span aria-current="page">Review demo</span></nav>
+<div class="page-heading"><p class="eyebrow">The final step. Still just a demo.</p><h1>Review &amp; explore<span class="brand-period">.</span></h1><p>Check your pairs below. No address, account, or payment details needed.</p></div>
+<%- include('partials/errors') %>
+<%- include('partials/cart-notices') %>
+<% if (cart.lines.length) { %>
+<div class="bag-layout">
+  <section class="review-items" aria-labelledby="review-heading"><h2 id="review-heading">Your demo selection</h2>
+    <% cart.lines.forEach(line => { %><article class="review-item"><img src="<%= line.imagePath %>" alt="" width="640" height="440"><div><h3><%= line.name %></h3><p><%= sizeSystem %> <%= line.size %> · Qty <%= line.quantity %></p><p class="muted"><%= formatMoney(line.unitPriceCents) %> each</p></div><strong><span class="sr-only">Line total </span><%= formatMoney(line.lineTotalCents) %></strong></article><% }); %>
+    <a class="text-link continue-link" href="/cart">← Edit your bag</a><div class="detail-note"><strong>A fresh review for every change.</strong><p>This review expires after 10 minutes. Changing the bag or a product price requires a new review before the demo can complete.</p></div>
+  </section>
+  <aside class="summary-panel" aria-labelledby="checkout-heading"><p class="eyebrow">Payment-free, by design</p><h2 id="checkout-heading">Demo checkout</h2><dl class="totals"><div><dt>Items (<%= cart.totalQuantity %>)</dt><dd><%= formatMoney(cart.subtotalCents) %></dd></div><div class="total-row"><dt>Demo total</dt><dd><%= formatMoney(cart.subtotalCents) %></dd></div></dl><p class="field-help">Catalog subtotal only. No shipping, tax, or payment is calculated or collected.</p>
+    <form action="/checkout" method="post" class="checkout-form"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><input type="hidden" name="reviewToken" value="<%= reviewToken %>">
+      <% if (errors.reviewToken) { %><p class="field-error"><%= errors.reviewToken %></p><p><a class="text-link" href="/checkout">Create a fresh review</a></p><% } %>
+      <div class="acknowledgment"><input type="checkbox" id="acknowledgment" name="acknowledgment" value="yes" required<%= form.acknowledgment === 'yes' ? ' checked' : '' %><% if (errors.acknowledgment) { %> aria-invalid="true" aria-describedby="acknowledgment-error"<% } %>><label for="acknowledgment">I understand this is a simulation. No payment will be taken and no real order will be placed.</label></div>
+      <% if (errors.acknowledgment) { %><p class="field-error" id="acknowledgment-error"><%= errors.acknowledgment %></p><% } %>
+      <button class="button button-dark button-full" type="submit">Simulate checkout — no payment</button>
+    </form><p class="summary-note">Your confirmation lives only in this demo session. Nothing is shipped.</p>
+  </aside>
+</div>
+<% } else { %><section class="empty-state"><h2>Your bag is empty.</h2><p>Add a sample pair before reviewing a demo checkout.</p><a class="button button-dark" href="/products">Explore the collection</a></section><% } %>
+<%- include('partials/footer') %>

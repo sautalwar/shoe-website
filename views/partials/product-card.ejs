@@ -1,0 +1,8 @@
+<article class="product-card">
+  <a class="product-image-link" href="/products/<%= product.id %>" aria-label="Explore <%= product.name %>">
+    <div class="product-art category-<%= product.category %>"><img src="<%= product.imagePath %>" alt="" loading="lazy" width="640" height="440"><span class="image-arrow" aria-hidden="true">↗</span></div>
+  </a>
+  <div class="product-meta"><span class="eyebrow"><%= product.category %></span><span><%= formatMoney(product.priceCents) %></span></div>
+  <h3><a href="/products/<%= product.id %>"><%= product.name %></a></h3>
+  <p class="product-sizes"><%= product.sizes.length %> sizes · <%= sizeSystem %> <%= product.sizes.join(' / ') %></p>
+</article>

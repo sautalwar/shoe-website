@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Studio Flow sample shoe</title><desc id="desc">Original illustration of a teal studio-training shoe with flowing mint panels and a thin flexible sole.</desc>
+  <rect width="640" height="400" rx="24" fill="#e5f4ef"/><path d="M405 113q30-52 60-15t65-25" fill="none" stroke="#bddfd3" stroke-width="20" stroke-linecap="round"/><ellipse cx="324" cy="309" rx="235" ry="16" fill="#bcdacf"/>
+  <path d="m99 272 20-81q29-30 54-5l68 45 83-41 65 45 100 19q54 10 62 34Z" fill="#368779" stroke="#23574f" stroke-width="5"/>
+  <path d="m133 213q33 74 120 48t141-5q29 10 70 7" fill="none" stroke="#9ad2bd" stroke-width="16"/><path d="m357 236 31 29m-15-34 32 33" stroke="#23574f" stroke-width="4"/>
+  <path d="M94 282h459l-5 19H94Z" fill="#eefbf4" stroke="#23574f" stroke-width="5"/><path d="m251 232 40 14m-20-27 41 14m-22-27 41 14" stroke="#eefbf4" stroke-width="7" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,12 @@
+<%- include('partials/header') %>
+<%- include('partials/errors') %>
+<% if (receipt) { %>
+<section class="confirmation-heading"><span class="success-mark" aria-hidden="true">✓</span><p class="eyebrow">Just a demo. A real good fit.</p><h1>That’s a wrap<span class="brand-period">.</span></h1><p class="confirmation-message">Demo complete — no payment taken; no real order placed.</p><p>No items will be shipped. No personal or payment information was collected.</p></section>
+<section class="receipt-panel" aria-labelledby="receipt-heading"><div class="section-heading"><h2 id="receipt-heading">Your demo recap</h2><span class="pill">Simulation complete</span></div><dl class="receipt-meta"><div><dt>Demo reference</dt><dd><%= receipt.reference %></dd></div><div><dt>Completed (UTC)</dt><dd><time datetime="<%= receipt.completedAt %>"><%= receipt.completedAt %></time></dd></div></dl>
+<% receipt.lines.forEach(line => { %><article class="review-item"><img src="<%= line.imagePath %>" alt="" width="640" height="440"><div><h3><%= line.name %></h3><p><%= sizeSystem %> <%= line.size %> · Qty <%= line.quantity %></p><p class="muted"><%= formatMoney(line.unitPriceCents) %> each</p></div><strong><%= formatMoney(line.lineTotalCents) %></strong></article><% }); %>
+<dl class="totals"><div class="total-row"><dt>Demo total · <%= receipt.totalQuantity %> <%= receipt.totalQuantity === 1 ? 'item' : 'items' %></dt><dd><%= formatMoney(receipt.subtotalCents) %></dd></div></dl><p class="field-help">This is a session-only recap, not an order receipt. It expires with your demo session.</p></section>
+<div class="center-action"><a class="button button-dark" href="/products">Find your next possibility <span aria-hidden="true">↗</span></a></div>
+<% } else { %>
+<section class="empty-state"><span class="empty-symbol" aria-hidden="true">↗</span><p class="eyebrow">A fresh start</p><h1>No demo confirmation here.</h1><p>You haven’t completed a demo checkout in this session, or your confirmation expired after inactivity or a store restart.</p><p>No payment was taken and no real order was placed.</p><a class="button button-dark" href="/products">Explore the collection</a><a class="text-link" href="/cart">Check your bag</a></section>
+<% } %>
+<%- include('partials/footer') %>

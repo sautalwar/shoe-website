@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+<nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/products">Collection</a><span aria-hidden="true">/</span><span aria-current="page"><%= product.name %></span></nav>
+<%- include('partials/errors') %>
+<section class="product-detail" aria-labelledby="product-heading">
+  <div class="detail-art product-art category-<%= product.category %>"><span class="detail-art-label eyebrow">Original sample design</span><img src="<%= product.imagePath %>" alt="<%= product.name %> shoe illustration" width="640" height="440"><span class="detail-art-bottom">Built for your next chapter ↗</span></div>
+  <div class="detail-copy"><p class="eyebrow"><%= product.category %> / The collection</p><h1 id="product-heading"><%= product.name %></h1><p class="detail-price"><%= formatMoney(product.priceCents) %> <span><%= currency %></span></p><p class="detail-description"><%= product.description %></p>
+    <form action="/cart/items" method="post" class="add-form">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>"><input type="hidden" name="productId" value="<%= product.id %>">
+      <% if (errors.productId) { %><p class="field-error"><%= errors.productId %></p><% } %>
+      <fieldset class="size-fieldset"<% if (errors.size) { %> aria-describedby="size-help size-error"<% } else { %> aria-describedby="size-help"<% } %>><legend>Select your size <span>(<%= sizeSystem %>)</span></legend><p id="size-help" class="field-help">Select an available <%= sizeSystem %> size. No gender-specific conversion is implied.</p><div class="size-options"><% product.sizes.forEach((size, index) => { %><div class="size-option"><input type="radio" id="product-size-<%= index %>" name="size" value="<%= size %>" required<%= form.size === size ? ' checked' : '' %><% if (errors.size) { %> aria-invalid="true" aria-describedby="size-error"<% } %>><label for="product-size-<%= index %>"><span class="sr-only"><%= sizeSystem %> </span><%= size %></label></div><% }); %></div><% if (errors.size) { %><p class="field-error" id="size-error"><%= errors.size %></p><% } %></fieldset>
+      <div class="field quantity-field"><label for="quantity">Quantity</label><input id="quantity" type="number" name="quantity" min="<%= limits.quantityMin %>" max="<%= limits.quantityMax %>" step="1" required value="<%= form.quantity %>" aria-describedby="quantity-help<%= errors.quantity ? ' quantity-error' : '' %>"<% if (errors.quantity) { %> aria-invalid="true"<% } %>><p id="quantity-help" class="field-help"><%= limits.quantityMin %>–<%= limits.quantityMax %> per size, including any already in your bag.</p><% if (errors.quantity) { %><p id="quantity-error" class="field-error"><%= errors.quantity %></p><% } %></div>
+      <button class="button button-dark button-full" type="submit">Add to bag <span aria-hidden="true">↗</span></button>
+    </form>
+    <div class="detail-note"><strong>Your pair. Your pace.</strong><p>This is a sample product, not an item for sale. Adding it to your bag starts a demo only.</p></div>
+  </div>
+</section>
+<%- include('partials/footer') %>

@@ -1,0 +1,28 @@
+<%- include('partials/header') %>
+<div class="page-heading"><p class="eyebrow">One step closer</p><h1>Your bag<span class="brand-period">.</span></h1><p><%= cart.totalQuantity %> <%= cart.totalQuantity === 1 ? 'item' : 'items' %> · <%= cart.lineCount %> <%= cart.lineCount === 1 ? 'style / size' : 'style / size combinations' %></p></div>
+<%- include('partials/errors') %>
+<%- include('partials/cart-notices') %>
+<% if (cart.lines.length) { %>
+<div class="bag-layout">
+  <section aria-label="Items in your bag" class="bag-items">
+    <% cart.lines.forEach((line, index) => { %>
+    <article class="bag-item">
+      <a class="bag-image" href="/products/<%= line.productId %>" aria-label="View <%= line.name %>"><img src="<%= line.imagePath %>" alt="" width="640" height="440"></a>
+      <div class="bag-item-info"><h2><a href="/products/<%= line.productId %>"><%= line.name %></a></h2><p><%= sizeSystem %> <%= line.size %> <span class="muted">· <%= formatMoney(line.unitPriceCents) %> each</span></p>
+        <form class="line-update" action="/cart/items/update" method="post">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>"><input type="hidden" name="productId" value="<%= line.productId %>"><input type="hidden" name="size" value="<%= line.size %>">
+          <div class="field"><label for="quantity-<%= index %>">Quantity<span class="sr-only"> for <%= line.name %>, <%= sizeSystem %> <%= line.size %></span></label><input id="quantity-<%= index %>" name="quantity" type="number" min="<%= limits.quantityMin %>" max="<%= limits.quantityMax %>" step="1" required value="<%= line.quantity %>"<% if (errors.quantity) { %> aria-invalid="true" aria-describedby="cart-quantity-error-<%= index %>"<% } %>><% if (errors.quantity) { %><p class="field-error" id="cart-quantity-error-<%= index %>"><%= errors.quantity %></p><% } %></div>
+          <button class="text-button" type="submit" aria-label="Update quantity for <%= line.name %>, <%= sizeSystem %> <%= line.size %>">Update</button>
+        </form>
+        <form action="/cart/items/remove" method="post"><input type="hidden" name="_csrf" value="<%= csrfToken %>"><input type="hidden" name="productId" value="<%= line.productId %>"><input type="hidden" name="size" value="<%= line.size %>"><button class="text-button remove-button" type="submit" aria-label="Remove <%= line.name %>, <%= sizeSystem %> <%= line.size %> from bag">Remove</button></form>
+      </div><p class="line-total"><span class="sr-only">Line total </span><%= formatMoney(line.lineTotalCents) %></p>
+    </article>
+    <% }); %>
+    <a class="text-link continue-link" href="/products">← Keep exploring</a>
+  </section>
+  <aside class="summary-panel" aria-labelledby="summary-heading"><p class="eyebrow">The bigger picture</p><h2 id="summary-heading">Bag summary</h2><dl class="totals"><div><dt>Items (<%= cart.totalQuantity %>)</dt><dd><%= formatMoney(cart.subtotalCents) %></dd></div><div class="total-row"><dt>Demo total</dt><dd><%= formatMoney(cart.subtotalCents) %></dd></div></dl><p class="field-help">Catalog subtotal only. No shipping, tax, or payment is calculated or collected.</p><a class="button button-dark button-full" href="/checkout">Review demo checkout <span aria-hidden="true">↗</span></a><p class="summary-note">Review your sizes and quantities before continuing. Nothing is purchased.</p></aside>
+</div>
+<% } else { %>
+<section class="empty-state"><span class="empty-symbol" aria-hidden="true">S/</span><h2>A little room for possibility.</h2><p>Your bag is empty. Find a pair, pick a size, and make it yours—for the demo.</p><a class="button button-dark" href="/products">Explore the collection <span aria-hidden="true">↗</span></a></section>
+<% } %>
+<%- include('partials/footer') %>

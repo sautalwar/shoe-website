@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Cloud Mile sample shoe</title><desc id="desc">Original illustration of a sky-blue running shoe with a soft white sole and dotted upper.</desc>
+  <rect width="640" height="400" rx="24" fill="#e8f4fd"/><path d="M377 107q0-29 30-29 19-31 44-9 36-11 44 18 29 0 29 26Z" fill="#fff"/><ellipse cx="323" cy="315" rx="236" ry="17" fill="#c1dce9"/>
+  <path d="m94 272 23-98q27-35 59-4l67 57 90-56 62 50 95 22q62 11 63 39Z" fill="#7cb9d9" stroke="#325e7a" stroke-width="5"/>
+  <path d="m126 181 44-3 71 67 92-57 50 43-109 43-91-15Z" fill="#b7dced"/><path d="m359 236 58 13m-37 1 67 14" stroke="#325e7a" stroke-width="6"/>
+  <path d="M88 275q227 13 465-2l-6 34q-242 25-459-1Z" fill="#fff" stroke="#325e7a" stroke-width="5"/><path d="m255 220 44 17m-23-35 46 18m-24-34 46 17" stroke="#fff" stroke-width="7" stroke-linecap="round"/><g fill="#478aae"><circle cx="202" cy="240" r="3"/><circle cx="215" cy="247" r="3"/><circle cx="224" cy="235" r="3"/><circle cx="237" cy="248" r="3"/><circle cx="246" cy="258" r="3"/></g>
+</svg>

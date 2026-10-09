@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Anchor Trainer sample shoe</title><desc id="desc">Original illustration of a charcoal training shoe with silver supportive panels and a wide flat sole.</desc>
+  <rect width="640" height="400" rx="24" fill="#edf0f2"/><rect x="432" y="62" width="88" height="88" rx="18" fill="#d5dce0" transform="rotate(15 476 106)"/><ellipse cx="324" cy="317" rx="245" ry="17" fill="#c6cdd1"/>
+  <path d="m92 278 24-111q31-19 57 5l67 52 83-48 70 51 97 23q55 12 64 40Z" fill="#4a535b" stroke="#28333c" stroke-width="5"/>
+  <path d="m112 239 44-14 19 51m55-19 31-38 21 60m20-56 31-22 37 69m74-19-9 34" fill="none" stroke="#aab4bb" stroke-width="14"/>
+  <path d="M83 281h476l-5 30H83Z" fill="#d9e0e4" stroke="#28333c" stroke-width="5"/><path d="m253 226 40 16m-20-33 43 16m-23-32 43 15" stroke="#ecf2f5" stroke-width="7" stroke-linecap="round"/><path d="M95 305h83m16 0h82m18 0h81m18 0h82m18 0h48" stroke="#667682" stroke-width="5"/>
+</svg>

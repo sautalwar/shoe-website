@@ -1,0 +1,6 @@
+<% if (Object.keys(errors).length) { %>
+  <section class="error-summary" role="alert" aria-label="Please check your information">
+    <h2>Let’s check that again.</h2>
+    <ul><% Object.entries(errors).forEach(([field, text]) => { %><li><%= text %></li><% }); %></ul>
+  </section>
+<% } %>

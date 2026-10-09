@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+<section class="hero" aria-labelledby="collection-heading">
+  <div class="hero-copy"><p class="eyebrow">A fresh perspective on every step</p><h1 id="collection-heading">Go your<br>own <span>way.</span></h1><p class="hero-description">The daily rotation, reimagined. Find your next pair for early starts, late finishes, and everything in between.</p><a class="button button-dark" href="#collection">Find your next pair <span aria-hidden="true">↗</span></a><p class="hero-caption">Original designs. A payment-free demo.</p></div>
+  <div class="hero-visual">
+    <span class="hero-orbit" aria-hidden="true"></span><span class="hero-word" aria-hidden="true">MOVE</span>
+    <% if (products.length) { %><img class="hero-shoe" src="<%= products[0].imagePath %>" alt="<%= products[0].name %> illustration" width="640" height="440"><div class="hero-product"><span class="eyebrow">In the collection</span><strong><%= products[0].name %></strong><span><%= formatMoney(products[0].priceCents) %></span></div><% } else { %><span class="hero-empty" aria-hidden="true">S/</span><% } %>
+    <span class="hero-stamp">Made to<br>keep moving ↗</span>
+  </div>
+</section>
+<div class="value-strip" aria-label="Store information"><span>Running. Casual. Training.</span><span>Clear <%= sizeSystem %> sizing</span><span>No payments. Just possibilities.</span></div>
+<section id="collection" class="collection" aria-labelledby="shop-heading">
+  <div class="section-heading"><div><p class="eyebrow">Your next rotation</p><h2 id="shop-heading">The collection<span class="brand-period">.</span></h2></div><p><%= products.length %> <%= products.length === 1 ? 'pair' : 'pairs' %> to explore</p></div>
+  <%- include('partials/errors') %>
+  <form class="catalog-filters" action="/products" method="get" role="search" aria-label="Search and filter the collection">
+    <div class="field search-field"><label for="q">Search the collection</label><input id="q" name="q" type="search" value="<%= filters.q %>" maxlength="<%= limits.searchLength %>" placeholder="Find your everyday favorite"<% if (errors.q) { %> aria-invalid="true" aria-describedby="q-error"<% } %>><% if (errors.q) { %><p id="q-error" class="field-error"><%= errors.q %></p><% } %></div>
+    <div class="field"><label for="category">Category</label><select id="category" name="category"<% if (errors.category) { %> aria-invalid="true" aria-describedby="category-error"<% } %>><option value="">All shoes</option><% categories.forEach(category => { %><option value="<%= category %>"<%= filters.category === category ? ' selected' : '' %>><%= category.charAt(0).toUpperCase() + category.slice(1) %></option><% }); %></select><% if (errors.category) { %><p id="category-error" class="field-error"><%= errors.category %></p><% } %></div>
+    <div class="field"><label for="size">Size (<%= sizeSystem %>)</label><select id="size" name="size"<% if (errors.size) { %> aria-invalid="true" aria-describedby="size-error"<% } %>><option value="">All sizes</option><% sizes.forEach(size => { %><option value="<%= size %>"<%= filters.size === size ? ' selected' : '' %>><%= sizeSystem %> <%= size %></option><% }); %></select><% if (errors.size) { %><p id="size-error" class="field-error"><%= errors.size %></p><% } %></div>
+    <div class="field"><label for="sort">Sort by</label><select id="sort" name="sort"<% if (errors.sort) { %> aria-invalid="true" aria-describedby="sort-error"<% } %>><% const sortLabels = { featured: 'Featured', 'price-asc': 'Price: low to high', 'price-desc': 'Price: high to low', name: 'Name: A–Z' }; sorts.forEach(sort => { %><option value="<%= sort %>"<%= filters.sort === sort ? ' selected' : '' %>><%= sortLabels[sort] || sort %></option><% }); %></select><% if (errors.sort) { %><p id="sort-error" class="field-error"><%= errors.sort %></p><% } %></div>
+    <button class="button button-dark filter-submit" type="submit">Apply filters</button><a class="text-link filter-reset" href="/products#collection">Reset filters</a>
+  </form>
+  <% if (products.length) { %><div class="product-grid"><% products.forEach(product => { %><%- include('partials/product-card', { product }) %><% }); %></div><% } else { %><div class="empty-state"><span class="empty-symbol" aria-hidden="true">↗</span><h3>No pairs found. Plenty of possibilities.</h3><p>Try another search, category, or size to find your next step.</p><a class="button button-dark" href="/products#collection">See all shoes</a></div><% } %>
+</section>
+<section class="editorial"><p class="eyebrow">Less noise. More you.</p><h2>A good day starts<br>from the ground up.</h2><p>Explore the collection, build a bag, and try a simulated checkout. No account, no payment, no personal details.</p></section>
+<%- include('partials/footer') %>

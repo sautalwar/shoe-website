@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An original sample footwear catalog. Explore shoes and try a simulated checkout without payment or personal information.">
+  <title><%= title %> · <%= siteName %></title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="demo-strip"><span class="demo-dot" aria-hidden="true"></span><%= demoNotice %></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/products" aria-label="<%= siteName %> home"><span class="brand-mark" aria-hidden="true">S/</span><%= siteName %><span class="brand-period" aria-hidden="true">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="/products"<% if (currentPath === '/products' || currentPath.startsWith('/products/')) { %> aria-current="page"<% } %>>The collection</a>
+        <a class="cart-link" href="/cart"<% if (currentPath === '/cart') { %> aria-current="page"<% } %>>Bag <span class="cart-count"><%= cartCount %><span class="sr-only"> items</span></span></a>
+      </nav>
+    </div>
+  </header>
+  <main id="main" class="container main-content" tabindex="-1">
+    <% if (notice) { %><div class="notice" role="status"><strong>A quick heads-up.</strong> <%= notice %></div><% } %>

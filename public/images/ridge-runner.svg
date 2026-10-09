@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-labelledby="title desc">
+  <title id="title">Ridge Runner sample shoe</title><desc id="desc">Original illustration of an olive trail-style shoe with copper panels and a rugged dark sole.</desc>
+  <rect width="640" height="400" rx="24" fill="#edf1e5"/><path d="m389 145 62-79 67 79 39-45 54 68" fill="none" stroke="#d2dcc1" stroke-width="14"/><ellipse cx="322" cy="316" rx="240" ry="17" fill="#c8d0ba"/>
+  <path d="m94 269 21-107 55-17 83 79 79-56 65 53 100 24q55 12 55 37Z" fill="#667950" stroke="#344236" stroke-width="5"/>
+  <path d="m115 164 54-18 33 37-46 48-52-5m232-58 61 52 101 25-29 27-122-40Z" fill="#b77849"/>
+  <path d="m99 265 53-34 47 25 59-17 63 28 69-16 75 29" fill="none" stroke="#d3dca7" stroke-width="9"/><path d="M91 278h463l-8 30-32 7-15-10-28 11-19-11-31 12-18-10-33 10-21-10-30 10-19-11-35 10-24-10-34 8-18-10-32 6Z" fill="#344236"/>
+  <path d="m254 214 47 19m-25-35 47 18m-25-34 47 19" stroke="#f5efd8" stroke-width="7" stroke-linecap="round"/>
+</svg>
