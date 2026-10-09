@@ -8,9 +8,9 @@ A beginner-friendly shoe-store **demo**, built with Node.js 22, Express, EJS tem
 
 **Local acceptance: APPROVE.** Independent verification completed a clean `npm ci`, all **38 tests**, and actual Chromium desktop/keyboard/mobile checks through catalog → product → cart → checkout → confirmation. Search/filter/empty states, restart, database reset, and idle session expiry passed. Layouts had no horizontal overflow at 320, 375, and 1440 pixels; all 12 local SVG illustrations loaded without external requests or browser errors. Listener smoke checks and clean shutdown also passed. No hosted deployment is claimed.
 
-The intended source repository is `sautalwar/shoe-website`. The GitHub API verified access to the intended owner; the target repository currently returns 404. Publication and a live deployment are separate, gated steps. No published repository or live URL is claimed here.
+**Source published:** [sautalwar/shoe-website](https://github.com/sautalwar/shoe-website) is a verified public GitHub repository on `main`. Source publication is complete; it does not itself deploy the website.
 
-Live hosting is currently blocked pending provider authorization. A local deployment Blueprint is available, but no authorized Render account access has been established.
+**Live hosting: not deployed; blocked pending Render authorization.** No authorized Render account/API/CLI access is available. The free-only Blueprint is published and ready for the owner to authorize setup through the [Render deployment link](https://render.com/deploy?repo=https://github.com/sautalwar/shoe-website). This is a provider setup link, not a live storefront.
 
 ## What you can try
 
@@ -140,11 +140,11 @@ Before sharing the demo, check:
 
 Render is a **candidate**, not an already-deployed service or a guarantee of free availability. Check current [free-service eligibility and limits](https://render.com/docs/free) before deployment. Provider signup/sign-in and repository access require the owner's authorization; never share credentials in chat.
 
-The included `render.yaml` Blueprint declares a single Free Node web service, generates a private session secret, and sets the configuration below. It has been validated against Render's Blueprint schema; schema validity is not deployment success. It declares no paid disk, separate database, custom scaling, or fixed `PORT`. Once the source is actually published, the setup entry point is:
+The published `render.yaml` Blueprint declares a single Free Node web service, generates a private session secret, and sets the configuration below. It has been validated against Render's Blueprint schema; schema validity is not deployment success. It declares no paid disk, separate database, custom scaling, or fixed `PORT`. To authorize Render and begin free-only setup:
 
 [Deploy the ShoeShop Blueprint to Render](https://render.com/deploy?repo=https://github.com/sautalwar/shoe-website)
 
-This link opens provider setup; it is **not a live storefront URL**, and it cannot deploy an unpublished repository. Inspect the Blueprint and confirm Free compute before approving it. Provider setup remains an owner action.
+This link opens provider setup for the published repository; it is **not a live storefront URL** and does not mean deployment has occurred. Authorize Render access, inspect the Blueprint, and confirm Free compute before approving it. Provider setup remains an owner action. Do not add a payment method or approve purchases/paid resources.
 
 For an authorized deployment:
 
